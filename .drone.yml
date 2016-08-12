@@ -7,3 +7,28 @@ build:
         - npm install -g request
         - npm install -g should
         - npm install
+
+publish:
+  docker:
+    repo: $$DOCKER_USERNAME/spark-trak
+    tag: latest
+    username: $$DOCKER_USERNAME
+    password: $$DOCKER_PASSWORD
+    email: $$DOCKER_EMAIL
+
+deploy:
+  webhook:
+    image: plugins/drone-webhook
+    skip_verify: true
+    method: POST
+    auth:
+      username: $$MANTL_USERNAME
+      password: $$MANTL_PASSWORD
+    urls:
+      - https://$$MANTL_CONTROL/marathon/v2/apps/class/$$DOCKER_USERNAME/restart?force=true
+
+notify:
+  spark:
+    image: hpreston/spark-trak
+    auth_token: $$SPARK_TOKEN
+    roomId: $$SPARK_ROOM
