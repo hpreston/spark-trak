@@ -1,0 +1,9 @@
+build:
+    image: node:5
+    commands:
+        - npm install -g node-flint
+        - npm install -g fs
+        - npm install -g csv-parse
+        - npm install -g request
+        - npm install -g should
+        - npm install
