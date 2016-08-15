@@ -1,0 +1,4 @@
+env_make
+secrets.yml
+node_modules
+drone_secrets.yml

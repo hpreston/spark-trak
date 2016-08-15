@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "A Cisco Spark bot using Flint",
   "main": "server.js",
-  "repository": "",
+  "repository": "twittbrod/spark-trak",
   "author": "Timothy Wittbrod <twittbrod@gmail.com>",
   "dependencies": {
     "csv-parse": "^1.1.1",

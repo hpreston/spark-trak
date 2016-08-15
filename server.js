@@ -33,8 +33,9 @@ var config = {
     baseUrl: 'http://carebot-twittbrod.c9users.io',
 //    baseUrl: 'https://mysparkcareassistantbot.herokuapp.com',
     // port that local server listens on
-    localPort: process.env.PORT,
-    // spark account email
+ //   localPort: process.env.PORT,
+    localPort: 8080,
+   // spark account email
     sparkEmail: 'twittbrod@gmail.com',
     // spark api token
     sparkToken: token_spark
