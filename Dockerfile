@@ -21,10 +21,10 @@ COPY node_modules /usr/src/app/node_modules
 COPY . /usr/src/app
 
 # Bundle app source
-COPY ./api /usr/src/app/api
-COPY ./static /usr/src/app/static
-COPY ./config /usr/src/app/config
-COPY ./app.js /usr/src/app/
+#COPY ./api /usr/src/app/api
+#COPY ./static /usr/src/app/static
+#COPY ./config /usr/src/app/config
+#COPY ./app.js /usr/src/app/
 COPY ./server.js /usr/src/app/
 
 #EXPOSE 8080
