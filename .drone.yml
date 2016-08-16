@@ -30,6 +30,6 @@ deploy:
 
 notify:
   spark:
-    image: hpreston/spark-trak
+    image: hpreston/drone-spark
     auth_token: $$SPARK_TOKEN
     roomId: $$SPARK_ROOM
