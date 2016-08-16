@@ -30,7 +30,8 @@ var myToken = "Bearer " + token_spark;
 // define flint setup
 var config = {
     // url to access this app's webservice
-    baseUrl: 'http://carebot-twittbrod.c9users.io',
+//    baseUrl: 'http://carebot-twittbrod.c9users.io',
+    baseUrl: 'https://control.green.browndogtech.com/marathon/v2/apps/imapex/spark-trak/spark-trak',
 //    baseUrl: 'https://mysparkcareassistantbot.herokuapp.com',
     // port that local server listens on
  //   localPort: process.env.PORT,
