@@ -27,6 +27,7 @@ COPY . /usr/src/app
 #COPY ./app.js /usr/src/app/
 COPY ./server.js /usr/src/app/
 
+EXPOSE $PORT0
 #EXPOSE 8080
 
 #CMD [ "npm", "start" ]
