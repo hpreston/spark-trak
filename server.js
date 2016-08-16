@@ -34,7 +34,7 @@ var config = {
 //    baseUrl: 'https://mysparkcareassistantbot.herokuapp.com',
     // port that local server listens on
  //   localPort: process.env.PORT,
-    localPort: $PORT0,
+    localPort: 8080,
    // spark account email
     sparkEmail: 'twittbrod@gmail.com',
     // spark api token
@@ -433,7 +433,7 @@ flint.hears('codered', function(bot, trigger) {
                 //for each array element first sub-element [0] is phone, second [1] is SMS number
                 sms = output[i][1];
 //                var mySmsURI = "https://api.tropo.com/1.0/sessions?action=create&token="+token_tropo_smsemer_txt+"&numbertodial="+sms;
-                var mySmsURI = "https://api.tropo.com/1.0/sessions?action=create&token="+token_tropo_smsemer_txt"+"&numbertodial="+sms+"&roomName="+roomName+"&sipUri="+sipURI+"&direction=out";
+                var mySmsURI = "https://api.tropo.com/1.0/sessions?action=create&token="+token_tropo_smsemer_txt+"&numbertodial="+sms+"&roomName="+roomName+"&sipUri="+sipURI+"&direction=out";
 
                 // send SMS/text
                 request({
