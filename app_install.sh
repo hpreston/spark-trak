@@ -12,8 +12,6 @@ echo
 echo "What is the password for your Mantl account?  "
 read -s mantl_password
 echo
-echo "What is the your Docker Username?  "
-read docker_username
 echo
 echo "What is the Lab Application Domain?  "
 read mantl_domain
@@ -44,10 +42,10 @@ sed -i "" -e "s/ENV_TOKEN_SPARK_BOT/$spark_token/g" deploy-spark-trak.json
 echo " "
 echo "***************************************************"
 echo "Installing the Spark-Track"
-#curl -k -X POST -u $mantl_user:$mantl_password https://$control_address:8080/v2/apps \
-#-H "Content-type: application/json" \
-#-d @$deploy-spark-trak.json \
-#| python -m json.tool
+curl -k -X POST -u $mantl_user:$mantl_password https://$control_address:8080/v2/apps \
+-H "Content-type: application/json" \
+-d @deploy-spark-trak.json \
+| python -m json.tool
 
 echo "***************************************************"
 echo

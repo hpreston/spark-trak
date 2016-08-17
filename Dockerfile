@@ -10,11 +10,11 @@ COPY package.json /usr/src/app/
 
 RUN npm install
 
-RUN npm install node-flint
-RUN npm install fs
-RUN npm install csv-parse
-RUN npm install request
-RUN npm install should
+RUN npm install node-flint && \
+    npm install fs && \
+    npm install csv-parse && \
+    npm install request && \
+    npm install should
 
 
 # Bundle app source
