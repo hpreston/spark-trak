@@ -18,6 +18,16 @@ echo
 echo "What is the Lab Application Domain?  "
 read mantl_domain
 echo
+echo "We need some details on your Spark and Tropo Account."
+echo
+echo "What is your Spark Token?"
+read -s spark_token
+echo
+echo "What is your TOKEN_TROPO_SMSEMER_TXT"
+read token_tropo_smsemer_txt
+echo
+
+# need to collect other relevant info
 
 
 #export MANTL_CONTROL="$control_address"
@@ -27,27 +37,23 @@ echo
 #echo "Marathon API calls will be sent to: "
 #echo "https://$MANTL_CONTROL:8080/"
 
-cp sample-demoapp.json $docker_username-demoapp.json
-sed -i "" -e "s/DOCKERUSER/$docker_username/g" $docker_username-demoapp.json
+cp sample-spark-trak.json deploy-spark-trak.json
+sed -i "" -e "s/ENV_TOKEN_SPARK_BOT/$spark_token/g" deploy-spark-trak.json
+# NEED TO FILL IN OTHER REPLACEMENTS HERE
 
 echo " "
 echo "***************************************************"
-echo "Installing the demoapp as  class/$docker_username"
-curl -k -X POST -u $mantl_user:$mantl_password https://$control_address:8080/v2/apps \
--H "Content-type: application/json" \
--d @$docker_username-demoapp.json \
-| python -m json.tool
+echo "Installing the Spark-Track"
+#curl -k -X POST -u $mantl_user:$mantl_password https://$control_address:8080/v2/apps \
+#-H "Content-type: application/json" \
+#-d @$deploy-spark-trak.json \
+#| python -m json.tool
 
 echo "***************************************************"
 echo
 
 echo Installed
 
-echo "Wait 2-3 minutes for the service to deploy. "
-echo "Then you can visit your application at:  "
-echo
-echo "http://class-$docker_username.$mantl_domain/hello/world"
-echo
 echo
 echo "You can also watch the progress from the GUI at: "
 echo
